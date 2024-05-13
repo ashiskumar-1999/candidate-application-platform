@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "Lexend";
+  src: url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+}
