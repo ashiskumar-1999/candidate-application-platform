@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Card from "./components/Card";
 import data from "./data/data";
 import SingleFilter from "./components/Filters/SingleFilter";
@@ -115,8 +115,8 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isFetching]);
   return (
-    <Box display="flex" my={10} flexDirection="column" mx={10}>
-      <Stack direction="row" spacing={4} mb={10}>
+    <Container>
+      <Stack direction="row" spacing={4} my={5}>
         <SingleFilter FilterLabel="Experience" menuItems={experience} />
         <SingleFilter FilterLabel="Tech Stack" menuItems={techStack} />
         <SingleFilter
@@ -151,7 +151,7 @@ const App = () => {
           </Box>
         )}
       </Grid>
-    </Box>
+    </Container>
   );
 };
 
