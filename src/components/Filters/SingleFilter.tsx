@@ -1,26 +1,21 @@
-// YourComponent.tsx
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Select, MenuItem, Typography, Chip } from "@mui/material";
 
+//Defining the type of the MenuItem for the Filter input.
 type MenuItem = {
   MenuItem: string;
 };
+
 type props = {
   menuItems: MenuItem[];
   FilterLabel: string;
 };
 const SingleFilter = ({ FilterLabel, menuItems }: props) => {
   const [filterOption, setFilterOption] = useState<string | undefined>();
-  const [onClose, setOnClose] = useState(false);
 
   const handleChange = (event: any) => {
     const value = event.target.value;
     setFilterOption(value);
-  };
-
-  const handleClose = () => {
-    setOnClose(true);
   };
 
   return (
@@ -35,7 +30,7 @@ const SingleFilter = ({ FilterLabel, menuItems }: props) => {
           if (!selected) {
             return <Typography>{FilterLabel}</Typography>;
           }
-          return <Chip label={selected} onDelete={handleClose} />;
+          return <Chip label={selected} />;
         }}
         sx={{
           minWidth: 122,
@@ -46,6 +41,9 @@ const SingleFilter = ({ FilterLabel, menuItems }: props) => {
           "&:active": { borderColor: "none" },
         }}
       >
+        <MenuItem>
+          <Typography color="gray">{FilterLabel}</Typography>
+        </MenuItem>
         {menuItems.map((option) => (
           <MenuItem value={option.MenuItem} sx={{ color: "gray" }}>
             {option.MenuItem}
