@@ -111,7 +111,7 @@ const JobCard = ({
             <Typography sx={{ fontSize: 16, fontWeight: "bold" }} color="gray">
               Minimum Experience
             </Typography>
-            <Typography>{minExperience}</Typography>
+            <Typography>{minExperience} Years</Typography>
           </Box>
         </CardContent>
         <CardActions>
